@@ -45,6 +45,8 @@ public class Estoque implements Operacoes {
         if (listaDeEstoque.isEmpty()){
             System.out.println("Estoque vazio, adicione algo para vizualizar.");
         }else {
+            System.out.println(" PRODUTO(S) DO ESTOQUE ");
+            System.out.println("-----------------------");
             for (ItemEstoque item : listaDeEstoque){
                 System.out.println(item.toString());
             }

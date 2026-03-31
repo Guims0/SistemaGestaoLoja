@@ -22,16 +22,14 @@ public class ItemEstoque {
     @Override
     public String toString() {
         return """
-           +-----------------------------------+
-           | ITEM DO ESTOQUE                   |
-           +-----------------------------------+
+           | Id: %-20s |
            | Produto: %-25s |
            | Preço:   R$ %-20.2f |
            | Qtd:     %-20d |
            +-----------------------------------+
            | VALOR EM ESTOQUE: R$ %-20.2f |
            +-----------------------------------+
-           """.formatted(produto.getNome(),
+           """.formatted(produto.getId(),produto.getNome(),
                 produto.getPreco(),
                 this.quantidade,
                 (produto.getPreco() * this.quantidade));

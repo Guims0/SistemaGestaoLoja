@@ -1,11 +1,12 @@
 public class Produto {
 
+    private static long contadorId = 1L;
     private Long id;
     private String nome;
     private double preco;
 
-    public Produto(Long id, String nome, double preco) {
-        this.id = id;
+    public Produto( String nome, double preco) {
+        this.id = contadorId++;
         this.nome = nome;
         this.preco = preco;
     }
