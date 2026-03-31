@@ -37,7 +37,7 @@ public class Estoque implements Operacoes {
             }
         }
 
-        System.out.println("Erro: Produto com ID "+id+" não encontrado no estoque. ");
+        System.out.println("Produto com ID "+id+" não encontrado no estoque. ");
     }
 
     @Override
@@ -45,10 +45,37 @@ public class Estoque implements Operacoes {
         if (listaDeEstoque.isEmpty()){
             System.out.println("Estoque vazio, adicione algo para vizualizar.");
         }else {
-            System.out.println(" PRODUTO(S) DO ESTOQUE ");
+            System.out.println(" PRODUTO(S) EM ESTOQUE ");
             System.out.println("-----------------------");
             for (ItemEstoque item : listaDeEstoque){
                 System.out.println(item.toString());
+            }
+        }
+    }
+    public Produto buscarProduto(Long id){
+        for (ItemEstoque item : listaDeEstoque){
+            if (item.getProduto().getId().equals(id)){
+                return item.getProduto();
+            }
+        }
+        return null;
+    }
+
+    public int verificarQuantidade(Long id) {
+        for (ItemEstoque item : listaDeEstoque) {
+            if (item.getProduto().getId().equals(id)) {
+                return item.getQuantidade();
+            }
+        }
+        return 0;
+    }
+
+    public void darBaixa(Long id,int quantidadeVendida){
+        for (ItemEstoque item : listaDeEstoque){
+            if (item.getProduto().getId().equals(id)){
+                int quantidadeNova = item.getQuantidade()-quantidadeVendida;
+                item.setQuantidade(quantidadeNova);
+                return;
             }
         }
     }

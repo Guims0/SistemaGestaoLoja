@@ -3,6 +3,7 @@ import java.util.Scanner;
 public class MenuAdmin {
     private Scanner scanner;
     private Estoque estoque;
+    private final int senha = 1234;
 
     public MenuAdmin(Scanner scanner, Estoque estoque) {
         this.scanner = scanner;
@@ -10,6 +11,18 @@ public class MenuAdmin {
     }
 
     public void iniciar(){
+
+        System.out.println(" === ÁREA RESTRITA === ");
+        System.out.println("Digite a senha do Administrador: ");
+        int senhaDigitada = scanner.nextInt();
+        scanner.nextLine();
+
+        if (senhaDigitada != senha){
+            System.out.println("Acesso negado, senha errada\n");
+            return;
+        }
+        System.out.println("Acesso permitido\n");
+
         int opcao = -1;
 
         while (opcao != 0){
@@ -28,7 +41,7 @@ public class MenuAdmin {
 
             switch (opcao){
                 case 1:
-                    System.out.println("\n-- CADASTRAR NOVO PRODUTO --");
+                    System.out.println("-- CADASTRAR NOVO PRODUTO --");
                     System.out.println("Digite o nome do produto: ");
                     String nome = scanner.nextLine();
 
@@ -44,7 +57,7 @@ public class MenuAdmin {
                     break;
 
                 case 2:
-                    System.out.println("\n-- EXCLUIR PRODUTO --");
+                    System.out.println("-- EXCLUIR PRODUTO --");
                     estoque.exibir();
 
                     System.out.println("Digite o id do produto que quer excluir: ");
