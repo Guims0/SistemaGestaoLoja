@@ -1,8 +1,11 @@
-public class ItemCarrinho {
+package model;
+
+public class ItemEstoque {
+
     private Produto produto;
     private int quantidade;
 
-    public ItemCarrinho(Produto produto, int quantidade) {
+    public ItemEstoque(Produto produto, int quantidade) {
         this.produto = produto;
         this.quantidade = quantidade;
     }
@@ -15,20 +18,22 @@ public class ItemCarrinho {
         return quantidade;
     }
 
+    public void setQuantidade(int quantidade) {
+        this.quantidade = quantidade;
+    }
     @Override
     public String toString() {
         return """
-           | Produto:  %-24s
-           | Preço Un: R$ %-21.2f
-           | Qtd:      %-24d
+           | Id: %-20s
+           | Produto: %-25s
+           | Preço:   R$ %-20.2f
+           | Qtd:     %-20d
            +-----------------------------------+
-           | SUBTOTAL: R$ %-21.2f
+           | VALOR EM ESTOQUE: R$ %-20.2f
            +-----------------------------------+
-           """.formatted(
-                produto.getNome(),
+           """.formatted(produto.getId(),produto.getNome(),
                 produto.getPreco(),
                 this.quantidade,
-                (produto.getPreco() * this.quantidade)
-        );
+                (produto.getPreco() * this.quantidade));
     }
 }

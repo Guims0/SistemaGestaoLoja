@@ -1,6 +1,12 @@
+package repository;
+
+import model.ItemCarrinho;
+import model.Produto;
+import service.Operacoes;
+
 import java.util.ArrayList;
 
-public class Carrinho implements Operacoes{
+public class Carrinho implements Operacoes {
 
     private ArrayList<ItemCarrinho> itemCarrinhos ;
 

@@ -1,3 +1,11 @@
+package controller;
+
+import model.ItemCarrinho;
+import model.ItemEstoque;
+import model.Produto;
+import repository.Carrinho;
+import repository.Estoque;
+
 import java.util.Scanner;
 
 public class MenuCliente {
@@ -17,10 +25,10 @@ public class MenuCliente {
 
             System.out.println("""
                     1. Ver Produtos da Loja
-                    2. Adicionar ao Carrinho
-                    3. Ver Meu Carrinho
-                    4. Finalizar Compra
-                    0. Voltar ao Menu Principal
+                    2. Adicionar ao carrinho
+                    3. Ver meu carrinho
+                    4. Finalizar compra
+                    0. Voltar ao menu principal
                     ==========================
                        Escolha uma opção:
                     """);

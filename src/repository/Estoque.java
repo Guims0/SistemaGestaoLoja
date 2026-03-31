@@ -1,3 +1,9 @@
+package repository;
+
+import model.ItemEstoque;
+import model.Produto;
+import service.Operacoes;
+
 import java.util.ArrayList;
 
 public class Estoque implements Operacoes {

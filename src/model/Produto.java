@@ -1,3 +1,5 @@
+package model;
+
 public class Produto {
 
     private static long contadorId = 1L;

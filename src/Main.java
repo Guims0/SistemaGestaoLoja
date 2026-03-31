@@ -1,3 +1,7 @@
+import controller.MenuAdmin;
+import controller.MenuCliente;
+import repository.Estoque;
+
 import java.util.Scanner;
 
 public class Main {

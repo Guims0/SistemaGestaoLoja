@@ -1,3 +1,7 @@
+package service;
+
+import model.Produto;
+
 public interface Operacoes {
 
      void adicionar(Produto p , int quantidade);

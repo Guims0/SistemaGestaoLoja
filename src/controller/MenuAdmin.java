@@ -1,3 +1,8 @@
+package controller;
+
+import model.Produto;
+import repository.Estoque;
+
 import java.util.Scanner;
 
 public class MenuAdmin {
@@ -29,10 +34,10 @@ public class MenuAdmin {
 
             System.out.println("""
                     === PAINEL DO ADMINISTRADOR ===
-                         1. Cadastrar Produto
-                         2. Excluir Produto
-                         3. Ver Estoque Completo
-                         0. Voltar ao Menu Principal
+                         1. Cadastrar produto
+                         2. Excluir produto
+                         3. Ver estoque completo
+                         0. Voltar ao menu principal
                     ===============================
                           Escolha uma opção:
                     """);
